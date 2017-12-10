@@ -3,7 +3,7 @@
 console.log('app is running');
 
 var template = React.createElement(
-  'h2',
+  'h1',
   null,
   'my App'
 );
