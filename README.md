@@ -37,3 +37,8 @@ install babel dependecies [env](https://babeljs.io/docs/plugins/preset-env/) and
 ```
 yarn add babel-preset-react@6.25.1 babel-preset-env@1.5.2
 ```
+
+setup Babel and launch watcher
+```
+babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
+```

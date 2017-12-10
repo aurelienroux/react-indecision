@@ -1,6 +1,6 @@
 console.log('app is running');
 
-var template = <p>indecision app</p>;
+var template = <h2>my App</h2>;
 var appRoot = document.getElementById('app');
 
 ReactDOM.render(template, appRoot);
