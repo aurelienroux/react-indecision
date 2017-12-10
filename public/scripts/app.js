@@ -2,18 +2,22 @@
 
 console.log('app is running');
 
+var appObj = {
+  title: 'my app object',
+  subtitle: 'subtitle is here'
+};
 var template = React.createElement(
   'div',
   null,
   React.createElement(
     'h1',
     null,
-    'my App'
+    appObj.title
   ),
   React.createElement(
     'p',
     null,
-    'this is app'
+    appObj.subtitle
   ),
   React.createElement(
     'ol',
@@ -60,4 +64,4 @@ var templateTwo = React.createElement(
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
