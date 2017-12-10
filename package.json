@@ -1,0 +1,12 @@
+{
+  "name": "react-indecision",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/aurelienroux/react-indecision.git",
+  "author": "Aurélien Roux <aureroux13@me.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "^6.24.1"
+  }
+}
