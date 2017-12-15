@@ -42,7 +42,7 @@ var template = React.createElement(
 );
 
 var userInfo = {
-  // name: 'Nathan',
+  name: 'Nathan',
   age: 23,
   town: 'Buschwiller'
 };
