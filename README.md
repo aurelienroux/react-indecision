@@ -9,7 +9,7 @@ Andrew Mead react [Udemy course](https://www.udemy.com/react-2nd-edition/learn/v
 [npm](https://www.npmjs.com/) minimum version 5.0.0  
 [yarn](https://yarnpkg.com/lang/en/) minimum version 1.3.0
 
-install [Yarn](https://yarnpkg.com/lang/en/) globaly
+install [Yarn](https://yarnpkg.com/lang/en/) globally
 ```
 initiate package with Yarn
 ```
@@ -18,7 +18,7 @@ yarn init
 npm install -g yarn
 ```
 
-install [live-server](https://yarnpkg.com/en/package/live-server) globaly and launch
+install [live-server](https://yarnpkg.com/en/package/live-server) globally and launch
 ```
 yarn global add live-server
 ```
@@ -33,7 +33,7 @@ install babel-cli
 yarn global add babel-cli@6.24.1
 ```
 
-install babel dependecies [env](https://babeljs.io/docs/plugins/preset-env/) and [react](https://babeljs.io/docs/plugins/preset-react/)
+install babel dependencies [env](https://babeljs.io/docs/plugins/preset-env/) and [react](https://babeljs.io/docs/plugins/preset-react/)
 ```
 yarn add babel-preset-react@6.25.1 babel-preset-env@1.5.2
 ```
