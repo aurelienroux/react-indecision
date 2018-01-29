@@ -1,8 +1,14 @@
 console.log('app is running');
 
+const appObj = {
+  title: 'my app object',
+  subtitle: 'subtitle is here',
+  options: ['One', 'Two']
+};
+
 const template = (
   <div>
-    <h1>{appObj.title}</h1>
+    <h1>{appObj.title} test</h1>
     {appObj.subtitle && <p>{appObj.subtitle}</p>}
     <p>{ appObj.options.length > 0 ? 'Here are your options' : 'No options' }</p>
     <ol>
@@ -12,6 +18,12 @@ const template = (
   </div>
 );
 
+const userInfo = {
+  name: 'Nathan',
+  age: 23,
+  town: 'Bale'
+};
+
 const templateTwo = (
   <div>
     <h1>{userInfo.name ? userInfo.name : 'Anonymous'}</h1>
@@ -20,17 +32,6 @@ const templateTwo = (
   </div>
 );
 
-const appObj = {
-  title: 'my app object',
-  subtitle: 'subtitle is here',
-  options: ['One', 'Two']
-};
-
-const userInfo = {
-  name: 'Nathan',
-  age: 23,
-  town: 'Buschwiller'
-};
 function getLocation(location){
   if(location){
     return <p>Location: {location}</p>;

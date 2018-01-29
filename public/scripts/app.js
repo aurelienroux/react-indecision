@@ -7,13 +7,15 @@ var appObj = {
   subtitle: 'subtitle is here',
   options: ['One', 'Two']
 };
+
 var template = React.createElement(
   'div',
   null,
   React.createElement(
     'h1',
     null,
-    appObj.title
+    appObj.title,
+    ' test'
   ),
   appObj.subtitle && React.createElement(
     'p',
@@ -44,18 +46,9 @@ var template = React.createElement(
 var userInfo = {
   name: 'Nathan',
   age: 23,
-  town: 'Buschwiller'
+  town: 'Bale'
 };
-function getLocation(location) {
-  if (location) {
-    return React.createElement(
-      'p',
-      null,
-      'Location: ',
-      location
-    );
-  }
-};
+
 var templateTwo = React.createElement(
   'div',
   null,
@@ -73,6 +66,17 @@ var templateTwo = React.createElement(
   ),
   getLocation(userInfo.town)
 );
+
+function getLocation(location) {
+  if (location) {
+    return React.createElement(
+      'p',
+      null,
+      'Location: ',
+      location
+    );
+  }
+};
 
 var appRoot = document.getElementById('app');
 ReactDOM.render(template, appRoot);
