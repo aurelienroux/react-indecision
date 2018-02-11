@@ -6,15 +6,11 @@ This course was just updated to support React v16 (React Fiber)
 
 ### packages managers
 ---
-[node](https://nodejs.org/en/) minimum version 8.0.0
-[npm](https://www.npmjs.com/) minimum version 5.0.0
+[node](https://nodejs.org/en/) minimum version 8.0.0  
+[npm](https://www.npmjs.com/) minimum version 5.0.0  
 [yarn](https://yarnpkg.com/lang/en/) minimum version 1.3.0
 
 install [Yarn](https://yarnpkg.com/lang/en/) globally
-```
-initiate package with Yarn
-```
-yarn init
 ```
 npm install -g yarn
 ```
