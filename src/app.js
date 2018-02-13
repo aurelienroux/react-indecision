@@ -34,8 +34,9 @@ const renderForm = () => {
       <p>{appObj.options.length}</p>
       <button onClick={clearArray}>Remove all</button>
       <ol>
-        <li>One</li>
-        <li>Two</li>
+        {
+          appObj.options.map( (opt, index) => <li index={index}>{opt}</li> )
+        }
       </ol>
       <form onSubmit={onFormSubmit}>
         <input type="text" name="option" />

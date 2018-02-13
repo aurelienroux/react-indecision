@@ -60,16 +60,13 @@ var renderForm = function renderForm() {
     React.createElement(
       'ol',
       null,
-      React.createElement(
-        'li',
-        null,
-        'One'
-      ),
-      React.createElement(
-        'li',
-        null,
-        'Two'
-      )
+      appObj.options.map(function (opt, index) {
+        return React.createElement(
+          'li',
+          { index: index },
+          opt
+        );
+      })
     ),
     React.createElement(
       'form',
