@@ -10,9 +10,7 @@ var appObj = {
 
 var onFormSubmit = function onFormSubmit(e) {
   e.preventDefault();
-
   var option = e.target.elements.option.value;
-
   if (option) {
     appObj.options.push(option);
     e.target.elements.option.value = '';
@@ -23,6 +21,12 @@ var onFormSubmit = function onFormSubmit(e) {
 var clearArray = function clearArray(e) {
   appObj.options = [];
   renderForm();
+};
+
+var onMakeDecision = function onMakeDecision() {
+  var randomNum = Math.floor(Math.random() * appObj.options.length);
+  var option = appObj.options[randomNum];
+  console.log(option);
 };
 
 var appRoot = document.getElementById('app');
@@ -48,9 +52,9 @@ var renderForm = function renderForm() {
       appObj.options.length > 0 ? 'Here are your options' : 'No options'
     ),
     React.createElement(
-      'p',
-      null,
-      appObj.options.length
+      'button',
+      { disabled: appObj.options.length === 0, onClick: onMakeDecision },
+      'What should I do ?'
     ),
     React.createElement(
       'button',
@@ -63,7 +67,7 @@ var renderForm = function renderForm() {
       appObj.options.map(function (opt, index) {
         return React.createElement(
           'li',
-          { index: index },
+          { key: index },
           opt
         );
       })

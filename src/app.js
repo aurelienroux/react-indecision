@@ -8,9 +8,7 @@ const appObj = {
 
 const onFormSubmit = (e) => {
   e.preventDefault();
-
   const option = e.target.elements.option.value;
-
   if (option) {
     appObj.options.push(option);
     e.target.elements.option.value = '';
@@ -23,6 +21,12 @@ const clearArray = (e) => {
   renderForm();
 }
 
+const onMakeDecision = () => {
+  const randomNum = Math.floor((Math.random() * appObj.options.length ));
+  const option = appObj.options[randomNum]
+  console.log(option);
+}
+
 const appRoot = document.getElementById('app');
 
 const renderForm = () => {
@@ -31,11 +35,11 @@ const renderForm = () => {
       <h1>{appObj.title} test</h1>
       {appObj.subtitle && <p>{appObj.subtitle}</p>}
       <p>{ appObj.options.length > 0 ? 'Here are your options' : 'No options' }</p>
-      <p>{appObj.options.length}</p>
+      <button disabled={appObj.options.length === 0} onClick={onMakeDecision}>What should I do ?</button>
       <button onClick={clearArray}>Remove all</button>
       <ol>
         {
-          appObj.options.map( (opt, index) => <li index={index}>{opt}</li> )
+          appObj.options.map( (opt, index) => <li key={index}>{opt}</li> )
         }
       </ol>
       <form onSubmit={onFormSubmit}>
