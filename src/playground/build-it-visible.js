@@ -14,9 +14,9 @@ const renderApp = () => {
       <button onClick={switchVisibility}>
         { visibleVar ? 'Hide' : 'Show' }
       </button>
-        { visibleVar && (
-          <p>here is the text</p>
-        )}
+      { visibleVar && (
+        <p>here is the text</p>
+      )}
     </div>
   )
   ReactDOM.render(visible, document.getElementById('app'));
