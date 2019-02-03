@@ -1,25 +1,33 @@
-console.log('visible app running');
+class SwitchVisibility extends React.Component {
+  constructor(props) {
+    super(props)
+    this.switchVisibility = this.switchVisibility.bind(this)
+    this.state = {
+      visibility: false
+    }
+  }
 
-let visibleVar = false;
+  switchVisibility() {
+    this.setState((prevState) => {
+      return {
+        visibility: !prevState.visibility
+      }
+    })
+  }
 
-const switchVisibility = () => {
-  visibleVar = !visibleVar;
-  renderApp();
+  render() {
+    return (
+      <div>
+        <h1>Visibility toggle</h1>
+        <button onClick={this.switchVisibility}>
+          { this.state.visibility ? 'Hide' : 'Show' }
+        </button>
+        { this.state.visibility && (
+          <p>some text</p>
+        )}
+      </div>
+    )
+  }
 }
 
-const renderApp = () => {
-  const visible = (
-    <div>
-      <h1>Visibility toggle</h1>
-      <button onClick={switchVisibility}>
-        { visibleVar ? 'Hide' : 'Show' }
-      </button>
-      { visibleVar && (
-        <p>here is the text</p>
-      )}
-    </div>
-  )
-  ReactDOM.render(visible, document.getElementById('app'));
-}
-
-renderApp();
+ReactDOM.render(<SwitchVisibility />, document.getElementById('app'))
