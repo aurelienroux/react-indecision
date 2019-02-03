@@ -1,17 +1,43 @@
-const obj = () => {}
-
 class IndecisionApp extends React.Component {
+  constructor(props) {
+    super(props)
+    this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
+    this.handlePick = this.handlePick.bind(this);
+    this.state = {
+      options: ['one', 'two', 'three']
+    };
+  }
+
+  handleDeleteOptions() {
+    this.setState(() => {
+      return {
+        options: []
+      }
+    })
+  }
+
+  handlePick() {
+    const randomNum = Math.floor((Math.random() * this.state.options.length ));
+    const option = this.state.options[randomNum]
+    alert(option)
+  }
+
   render() {
     const title = 'Indecision';
     const subtitle = 'choice app';
-    const options = ['one', 'two', 'four'];
 
     return (
       <div>
         <Header title={title} subtitle={subtitle} />
-        <Action />
-        <Options options={options} />
-        <AddOption options={options} />
+        <Action 
+          hasOptions={this.state.options.length > 0} 
+          handlePick={this.handlePick}
+        />
+        <Options 
+          options={this.state.options} 
+          handleDeleteOptions={this.handleDeleteOptions}
+        />
+        <AddOption />
       </div>
     )
   }
@@ -29,28 +55,27 @@ class Header extends React.Component {
 }
 
 class Action extends React.Component {
-  handlePick() {}
   render() {
     return (
       <div>
-        <button onClick={this.handlePick}>What to do ?</button>
+        <button 
+          onClick={this.props.handlePick}
+          disabled={!this.props.hasOptions}
+        >
+          What to do ?
+        </button>
       </div>
     )
   }
 }
 
 class Options extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleRemoveAll = this.handleRemoveAll.bind(this);
-  }
-  handleRemoveAll() {
-    console.log(this.props.options);
-  }
   render() {
     return (
       <div>
-        <button onClick={this.handleRemoveAll}>Remove all</button>
+        <button onClick={this.props.handleDeleteOptions}>
+          Remove all
+        </button>
         {this.props.options.map((option, index) => <Option key={index} text={option} /> )}
       </div>
     )
