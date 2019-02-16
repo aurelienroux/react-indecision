@@ -1,9 +1,11 @@
-import { square, add } from './utils';
-import { isAdult, canDrink } from './person';
+// import subtract, { square, add } from './utils';
+// console.log(square(3));
+// console.log(add(9, 5));
+// console.log(subtract(50, 25));
 
-console.log(square(3));
-console.log(add(9, 5));
 
-console.log(isAdult(19));
-console.log(canDrink(19));
+import isSenior, { isAdult, canDrink } from './person';
+console.log('is adult', isAdult(19));
+console.log('can drink', canDrink(19));
+console.log('is senior', isSenior(66));
 
