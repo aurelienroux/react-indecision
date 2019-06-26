@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "serve": "live-server public/",
-    "build": "webpack --watch --mode=development",
-    "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch"
+    "build": "webpack",
+    "dev-server": "webpack-dev-server"
   },
   "dependencies": {
     "@babel/core": "^7.3.3",
@@ -20,7 +20,8 @@
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "validator": "^10.11.0",
-    "webpack": "^4.29.3"
+    "webpack": "^4.29.3",
+    "webpack-dev-server": "^3.7.2"
   },
   "devDependencies": {
     "webpack-cli": "^3.2.3"
