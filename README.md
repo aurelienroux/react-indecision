@@ -39,3 +39,11 @@ setup Babel and launch watcher
 ```
 babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
 ```
+
+### Webpack
+---
+
+launch server and watcher
+```
+npm run dev-server
+```
