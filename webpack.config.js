@@ -20,6 +20,13 @@ module.exports = {
           "@babel/plugin-proposal-class-properties"
         ]
       }
+    }, {
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        'sass-loader'
+      ]
     }]
   },
   devtool: 'cheap-module-eval-source-map',
