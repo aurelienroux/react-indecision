@@ -1,5 +1,2 @@
-$brand-color: lime;
-
-* {
-  color: $brand-color;
-}
+@import './base/base';
+@import './components/header.scss';
