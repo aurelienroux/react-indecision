@@ -10,12 +10,15 @@ export default class IndecisionApp extends React.Component {
     options: [],
     selectedOption: undefined
   };
+
   handleClearSelectedOption = () => {
     this.setState(() => ({ selectedOption: undefined }))
   }
+
   handleDeleteOptions = () => {
     this.setState(() => ({ options: [] }) );
   };
+
   handleDeleteOption = (option) => {
     this.setState((prevState) => {
       return {
@@ -23,6 +26,7 @@ export default class IndecisionApp extends React.Component {
       }
     })
   };
+
   handlePick = () => {
     const randomNum = Math.floor((Math.random() * this.state.options.length ));
     const option = this.state.options[randomNum];
@@ -31,6 +35,7 @@ export default class IndecisionApp extends React.Component {
       selectedOption: option
     }))
   };
+
   handleAddOption = (option) => {
     if (!option) {
       return 'Enter valid value to add item';
@@ -41,6 +46,7 @@ export default class IndecisionApp extends React.Component {
       options: prevState.options.concat(option)
     }));
   };
+
   componentDidMount() {
     try {
       const json = localStorage.getItem('options')
@@ -53,6 +59,7 @@ export default class IndecisionApp extends React.Component {
       // Do nothing at all
     }
   };
+
   componentDidUpdate(prevProps, prevState) {
     if (prevState.options.length !== this.state.options.length) {
       const json = JSON.stringify(this.state.options)
@@ -60,9 +67,11 @@ export default class IndecisionApp extends React.Component {
       console.log('saving data');
     }
   };
+
   componentWillUnmount() {
     console.log('will unmount');
   };
+
   render() {
     const subtitle = 'choices app';
 
